@@ -23,6 +23,10 @@ app.get("/", (req, res) => {
 
 app.use("/api/v1", productRouter);
 
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`);
-})
+if (process.env.RENDER) {
+    app.listen(port, () => {
+        console.log(`Example app listening on port ${port}`);
+    })
+}
+
+module.exports = app;
