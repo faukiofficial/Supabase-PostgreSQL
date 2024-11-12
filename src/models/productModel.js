@@ -18,6 +18,15 @@ const Product = sequelize.define("Product", {
         type: DataTypes.INTEGER,
         allowNull: false
     },
+    available: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: true
+    },
+    role: {
+        type: DataTypes.STRING,
+        defaultValue: "user"
+    }
 }, {
     timestamps: true
 });

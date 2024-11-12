@@ -15,7 +15,7 @@ app.use(express.json());
 
 app.use(morgan("dev"));
 
-sequelize.sync().then(() => console.log("Database Connected"))
+sequelize.sync({alter: true}).then(() => console.log("Database Connected"))
 
 app.get("/", (req, res) => {
     res.send("Hello World!");
