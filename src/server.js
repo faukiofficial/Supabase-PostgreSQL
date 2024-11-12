@@ -29,4 +29,4 @@ if (process.env.RENDER) {
     })
 }
 
-module.exports = app;
+export default app;
