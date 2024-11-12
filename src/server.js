@@ -5,6 +5,8 @@ import sequelize from "./config/databaseConnection.js";
 
 import productRouter from "./routers/productRouter.js";
 
+const port = process.env.PORT || 3000;
+
 config();
 
 const app = express();
@@ -21,6 +23,6 @@ app.get("/", (req, res) => {
 
 app.use("/api/v1", productRouter);
 
-app.listen(process.env.PORT, () => {
-    console.log(`Example app listening on port ${process.env.PORT}`);
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`);
 })
